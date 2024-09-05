@@ -1,0 +1,4535 @@
+@import "../css/reset.css";
+@import "../css/font.css";
+@import "../css/main.css";
+@import "./_variables";
+@import "./header.css";
+@import "./footer.css";
+
+.wrap {
+
+    section {
+
+        // 메인페이지 영역
+        &.main-page {
+
+            article {
+                padding: 100px 0;
+
+                .inner {
+                    max-width: 100%;
+                    width: 100%;
+                    margin: 0 auto;
+                }
+
+                .textbox {
+                    @include textbox;
+                }
+
+                &.main_vs_wrap {
+                    padding: 0;
+                    width: 100%;
+                    height: 100vh;
+                    overflow: hidden;
+
+                    .inner {
+                        height: 100%;
+                        position: relative;
+                        @include inner;
+                        padding: 0;
+                    }
+
+                    .vsSwiper {
+
+                        .swiper-slide {
+
+                            &-active {
+
+                                .textbox {
+                                    animation-duration: 2s;
+                                    animation-fill-mode: both;
+                                    animation-name: fadeInUp;
+                                }
+                            }
+
+                            .background-img {
+                                width: 100%;
+                                height: 100%;
+                            }
+
+                            .textbox {
+                                position: absolute;
+                                top: 50%;
+                                left: 0;
+                                transform: translateY(-50%);
+                                width: 100%;
+                                margin: 0 auto;
+                                z-index: 10;
+                                padding: 0 calc(260 / 1920 * 100%);
+
+                                .main_text {
+                                    font-family: $f900;
+                                    font-size: 120px;
+                                    line-height: 1.3;
+                                    color: #fff;
+                                    letter-spacing: -0.03em;
+
+                                    b {
+                                        color: $M_color;
+                                    }
+                                }
+                            }
+
+                            .circle-wrap {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                width: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                .circle-box {
+                                    position: relative;
+                                    width: 560px;
+                                    height: 560px;
+
+                                    .circle {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        width: 100%;
+                                        height: 100%;
+                                        background-color: transparent;
+                                        border: 1px solid rgba(255,255,255,50%);
+                                        border-radius: 100%;
+                                        animation: vs_circle 10s infinite linear;
+                                        -webkit-animation: vs_circle 10s infinite linear;
+                                        -moz-animation: vs_circle 10s infinite linear;
+                                        -ms-animation: vs_circle 10s infinite linear;
+                                        -o-animation: vs_circle 10s infinite linear;
+
+                                        .circle-ico {
+                                            position: absolute;
+                                            top: 50%;
+                                            left: -0.4375rem;
+                                            width: 0.875rem;
+                                            height: 0.875rem;
+                                            background-color: $M_color;
+                                            border-radius: 100%;
+
+                                            &.circle-ico2 {
+                                                left: auto;
+                                                right: -0.4375rem;
+                                                background-color: $S_color;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .swiper-options {
+
+                            .swiper-pagination {
+
+                                .swiper-pagination-bullet {
+                                    width: 50px;
+                                    height: 5px;
+                                    border-radius: 0;
+                                    background-color: #fff;
+                                }
+                            }
+                        }
+
+                        .scroll-wrap {
+                            position: absolute;
+                            bottom: 80px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            z-index: 10;
+                            animation: scrollDown 3s ease infinite;
+                        }
+                    }
+                }
+
+                &.main_cont1 {
+                    position: relative;
+
+                    .inner {
+                        @include inner;
+                    }
+
+                    .top_textbox {
+
+                        .english_text {
+                            width: 100%;
+                            display: block;
+                            font-family: 'Montserrat', sans-serif;
+                            font-weight: 700;
+                            font-size: 16px;
+                            color: #000;
+                            text-transform: uppercase;
+                        }
+
+                        .korean_text {
+                            width: 100%;
+                            display: block;
+                            margin: 15px 0 50px;
+                            font-family: $f500;
+                            font-size: 35px;
+                            line-height: 1.5;
+                            color: #000;
+                        }
+
+                        .information_text {
+                            width: 100%;
+                            display: block;
+                            font-family: $f400;
+                            font-size: 20px;
+                            line-height: 1.5;
+                            color: #000;
+                        }
+                    }
+
+                    .vision_infoBox {
+                        max-width: 100%;
+                        width: 100%;
+                        margin-top: 100px;
+
+                        > ul {
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            align-items: flex-start;
+
+                            > li {
+                                width: calc(100%/3 - 100px);
+                                margin-right: 150px;
+
+                                &:last-of-type {
+                                    margin-right: 0;
+                                }
+
+                                .img {
+                                    width: 220px;
+                                    height: 220px;
+                                    background-color: $M_color;
+                                    border-radius: 100%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin: 0 auto;
+                                    position: relative;
+                                    margin-bottom: 55px;
+
+                                    &::after {
+                                        content: '';
+                                        display: block;
+                                        position: absolute;
+                                        bottom: -40px;
+                                        left: 50%;
+                                        transform: translateX(-50%);
+                                        width: 1px;
+                                        height: 30px;
+                                        background-color: $M_color;
+                                    }
+
+                                    .icon {
+                                        height: 75px;
+                                        margin-bottom: 15px;
+                                    }
+
+                                    .text {
+                                        font-size: 20px;
+                                        line-height: 1.3;
+                                        text-align: center;
+
+                                        .kr {
+                                            font-family: $f600;
+                                            color: #fff;
+                                        }
+
+                                        .en {
+                                            font-family: 'Montserrat', sans-serif;
+                                            font-weight: 500;
+                                            color: #fff;
+                                            letter-spacing: -0.05em;
+                                        }
+                                    }
+                                }
+
+                                .text {
+                                    font-family: $f400;
+                                    font-size: 20px;
+                                    line-height: 1.5;
+                                    color: #000;
+                                }
+                            }
+                        }
+                    }
+
+                    .back_img {
+                        @include back_img;
+                        top: 27%;
+                        left: -3%;
+
+                        &.star {
+                            @include star;
+                        }
+                    }
+                }
+
+                &.main_cont2 {
+                    background: url($url + "section2_bg.png")no-repeat;
+                    background-size: cover;
+
+                    .inner {
+                        @include inner;
+                    }
+
+                    .contents {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        align-items: flex-start;
+                        position: relative;
+
+                        .lef {
+                            @include lef;
+                            margin-right: 70px;
+                            position: sticky;
+                            top: 130px;
+                        }
+
+                        .rig {
+                            @include rig;
+
+                            .counselting_list01 {
+                                width: 100%;
+                                display: flex;
+                                flex-direction: row;
+                                flex-wrap: wrap;
+
+                                > li {
+                                    width: calc(100%/2 - 25px);
+                                    margin-right: 50px;
+                                    margin-top: 30px;
+                                    background-color: #fff;
+                                    border-radius: 30px;
+                                    padding: 30px;
+                                    transition: all 0.3s ease-in-out;
+
+                                    &:hover {
+                                        background-color: $M_color;
+
+                                        .top_wrap {
+
+                                            .icon {
+
+                                                .desktop_icon {
+                                                    display: none;
+                                                }
+
+                                                .mobile_icon {
+                                                    display: block;
+                                                }
+                                            }
+
+                                            .title {
+                                                color: #fff;
+                                            }
+                                        }
+
+                                        .info_wrap {
+
+                                            .row {
+
+                                                .blue_t {
+                                                    color: #fff;
+                                                }
+
+                                                .text_list_wrap {
+
+                                                    span {
+                                                        background-color: #fff;
+                                                    }
+
+                                                    p {
+                                                        color: #fff;
+
+                                                        b {
+                                                            color: #fff;
+                                                        }
+                                                    }
+                                                }
+
+                                                .text {
+                                                    color: #fff;
+
+                                                    b {
+                                                        color: #fff;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &:nth-child(n+1):nth-child(-n+2) {
+                                        margin-top: 0;
+                                    }
+
+                                    &:nth-child(2n) {
+                                        margin-right: 0;
+                                    }
+
+                                    &:last-child {
+                                        width: 100%;
+                                        margin-right: 0;
+                                    }
+
+                                    .top_wrap {
+                                        width: 100%;
+                                        margin-bottom: 30px;
+                                        display: flex;
+                                        flex-direction: row;
+                                        flex-wrap: wrap;
+                                        align-items: center;
+
+                                        .icon {
+                                            height: 75px;
+                                            margin-right: 30px;
+
+                                            .desktop_icon {
+                                                display: block;
+                                            }
+
+                                            .mobile_icon {
+                                                display: none;
+                                            }
+                                        }
+
+                                        .title {
+                                            width: calc(100% - 105px);
+                                            font-family: $f700;
+                                            font-size: 28px;
+                                            line-height: 1.3;
+                                            color: $S_color;
+                                        }
+                                    }
+
+                                    .info_wrap {
+
+                                        .row {
+                                            margin-bottom: 40px;
+
+                                            &:last-of-type {
+                                                margin-bottom: 0;
+                                            }
+
+                                            .tag {
+                                                font-family: $f700;
+                                                font-size: 17px;
+                                                line-height: 1.3;
+                                                color: $S_color;
+                                                background-color: #f4f7ff;
+                                                border-radius: 30px;
+                                                padding: 5px 15px;
+                                                display: inline-flex;
+                                                flex-direction: row;
+                                                justify-content: center;
+                                                align-items: center;
+                                                margin-bottom: 15px;
+
+                                                i {
+                                                    width: 15px;
+                                                    height: 15px;
+                                                    background-color: $M_color;
+                                                    border-radius: 100%;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    font-size: 10px;
+                                                    color: #fff;
+                                                    margin-right: 10px;
+                                                }
+                                            }
+
+                                            .blue_t {
+                                                font-family: $f400;
+                                                font-size: 16px;
+                                                line-height: 1.3;
+                                                color: $S_color;
+                                                word-break: keep-all;
+                                            }
+
+                                            .text_list_wrap {
+                                                width: 100%;
+
+                                                > li {
+                                                    width: 100%;
+                                                    display: flex;
+                                                    flex-direction: row;
+                                                    align-items: flex-start;
+                                                    margin-bottom: 5px;
+
+                                                    &:last-of-type {
+                                                        margin-bottom: 0;
+                                                    }
+
+                                                    span {
+                                                        width: 3px;
+                                                        height: 3px;
+                                                        background-color: #000;
+                                                        border-radius: 100%;
+                                                        margin-top: 7px;
+                                                        margin-right: 10px;
+                                                    }
+
+                                                    p {
+                                                        width: calc(100% - 13px);
+                                                        font-family: $f400;
+                                                        font-size: 16px;
+                                                        line-height: 1.3;
+                                                        color: #000;
+                                                        word-break: keep-all;
+                                                    }
+                                                }
+                                            }
+
+                                            .text {
+                                                font-family: $f400;
+                                                font-size: 16px;
+                                                line-height: 1.3;
+                                                color: #000;
+                                                word-break: keep-all;
+
+                                                b {
+                                                    font-family: $f700;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.w100 {
+
+                                        .info_wrap {
+                                            display: flex;
+                                            flex-direction: row;
+                                            flex-wrap: wrap;
+                                            align-items: flex-start;
+
+                                            .row {
+                                                width: calc(100%/3 - 10px);
+                                                margin-right: 15px;
+
+                                                &:last-of-type {
+                                                    margin-right: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.main_cont3 {
+                    overflow: hidden;
+
+                    .inner {
+                        @include inner;
+                        padding: 0;
+                    }
+
+                    .contents {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        align-items: flex-start;
+
+                        .lef {
+                            height: 550px;
+                            @include lef;
+                            padding-left: calc(260 / 1920 * 100%);
+                            margin-right: 70px;
+                            position: relative;
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            align-content: space-between;
+
+                            .swiper-options {
+                                width: auto;
+                                position: relative;
+                                bottom: 0;
+                                right: 0;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+
+                                .swiper-button-next,
+                                .swiper-button-prev {
+                                    position: relative;
+                                    top: 0;
+                                    width: 75px;
+                                    height: 75px;
+                                    margin: 0;
+                                    background-color: #fff;
+                                    border-radius: 100%;
+                                    box-shadow: 5px 8px 18px rgba(0, 0, 0, 0.1);
+                                }
+
+                                .swiper-button-next,
+                                .swiper-rtl .swiper-button-prev {
+                                    right: 0;
+                                    left: auto;
+                                }
+
+                                .swiper-button-prev,
+                                .swiper-rtl .swiper-button-next {
+                                    left: 0;
+                                    right: auto;
+                                    margin-right: 50px;
+                                }
+
+                                .swiper-button-prev:after,
+                                .swiper-rtl .swiper-button-next:after {
+                                    width: 30px;
+                                    height: 18px;
+                                    background: url($url + "icon/prev_ico.png")no-repeat;
+                                    background-size: contain;
+                                    font-size: 0;
+                                }
+                                .swiper-button-next:after,
+                                .swiper-rtl .swiper-button-prev:after {
+                                    width: 30px;
+                                    height: 18px;
+                                    background: url($url + "icon/next_ico.png")no-repeat;
+                                    background-size: contain;
+                                    font-size: 0;
+                                }
+                            }
+                        }
+
+                        .rig {
+                            height: 550px;
+                            padding: 15px;
+                            @include rig;
+                            padding-right: calc(260 / 1920 * 100%);
+                            overflow: hidden;
+                            position: relative;
+                            z-index: 4;
+
+                            .cont3_Swiper {
+                                overflow: visible;
+
+                                .swiper-slide {
+                                    height: 100%;
+                                    padding: 30px;
+                                    background-color: #fff;
+                                    box-shadow: 5px 8px 18px rgba(0, 0, 0, 15%);
+                                    border-radius: 30px;
+                                    transition: all 0.3s ease-in-out;
+
+                                    &:hover {
+                                        transform: translateY(-15px);
+                                        background-color: $M_color;
+
+                                        .title {
+                                            color: #fff;
+
+                                            b {
+                                                color: #fff;
+                                            }
+                                        }
+
+                                        .row {
+
+                                            .blue_t {
+                                                color: #fff;
+
+                                                b {
+                                                    color: #fff;
+                                                }
+                                            }
+
+                                            .text_list_wrap {
+
+                                                > li {
+
+                                                    span {
+                                                        background-color: #fff;
+                                                    }
+
+                                                    p {
+                                                        color: #fff;
+                                                    }
+                                                }
+                                            }
+
+                                            .text {
+                                                color: #fff;
+
+                                                b {
+                                                    font-family: $f700;
+                                                    color: #fff;
+                                                }
+                                            }
+
+                                            .box_text {
+                                                background-color: #fff;
+
+                                                .tit {
+                                                    color: #000;
+                                                }
+
+                                                .txt {
+                                                    color: #000;
+                                                }
+
+                                                .text_list_wrap {
+
+                                                    > li {
+
+                                                        span {
+                                                            background-color: #000;
+                                                        }
+
+                                                        p {
+                                                            color: #000;
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            .list-text {
+                                                color: #fff;
+                                            }
+
+                                            .img_box {
+
+                                                > li {
+
+                                                    &::after {
+                                                        color: #fff;
+                                                    }
+
+                                                    &:last-child {
+                                                        margin-bottom: 0;
+                                                        padding-bottom: 0;
+
+                                                        &::after {
+                                                            display: none;
+                                                        }
+                                                    }
+
+                                                    &:nth-child(2) {
+
+                                                        .circle {
+                                                            background-color: #fff;
+                                                        }
+                                                    }
+
+                                                    &:nth-child(3) {
+
+                                                        .circle {
+                                                            background-color: #fff;
+                                                        }
+                                                    }
+
+                                                    .circle {
+                                                        background-color: #fff;
+                                                        color: $S_color;
+                                                    }
+
+                                                    .text {
+                                                        color: #fff;
+                                                    }
+                                                }
+                                            }
+
+                                            .counselting-list {
+                                                width: 100%;
+                                                display: flex;
+                                                flex-direction: row;
+                                                flex-wrap: wrap;
+                                                align-items: flex-start;
+
+                                                > li {
+                                                    width: calc(100%/2 - 10px);
+                                                    margin-right: 20px;
+
+                                                    &:last-child {
+                                                        margin-right: 0;
+                                                    }
+
+                                                    .title {
+                                                        border: 1px solid #fff;
+                                                        color: #fff;
+                                                    }
+
+                                                    .text {
+                                                        color: #fff;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .title {
+                                        width: 100%;
+                                        font-family: $f400;
+                                        font-size: 26px;
+                                        line-height: 1.3;
+                                        color: #000;
+                                        margin-bottom: 30px;
+                                        display: block;
+
+                                        b {
+                                            font-family: $f700;
+                                            color: $S_color;
+                                        }
+                                    }
+
+                                    .row {
+                                        margin-bottom: 40px;
+
+                                        &:last-of-type {
+                                            margin-bottom: 0;
+                                        }
+
+                                        .tag {
+                                            font-family: $f700;
+                                            font-size: 17px;
+                                            line-height: 1.3;
+                                            color: $S_color;
+                                            background-color: #f4f7ff;
+                                            border-radius: 30px;
+                                            padding: 5px 15px;
+                                            display: inline-flex;
+                                            flex-direction: row;
+                                            justify-content: center;
+                                            align-items: center;
+                                            margin-bottom: 15px;
+
+                                            i {
+                                                width: 15px;
+                                                height: 15px;
+                                                background-color: $M_color;
+                                                border-radius: 100%;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                font-size: 10px;
+                                                color: #fff;
+                                                margin-right: 10px;
+                                            }
+                                        }
+
+                                        .blue_t {
+                                            font-family: $f400;
+                                            font-size: 16px;
+                                            line-height: 1.3;
+                                            color: $S_color;
+
+                                            b {
+                                                font-family: $f700;
+                                                color: $S_color;
+                                            }
+                                        }
+
+                                        .text_list_wrap {
+                                            width: 100%;
+
+                                            > li {
+                                                width: 100%;
+                                                display: flex;
+                                                flex-direction: row;
+                                                align-items: flex-start;
+                                                margin-bottom: 5px;
+
+                                                &:last-of-type {
+                                                    margin-bottom: 0;
+                                                }
+
+                                                span {
+                                                    width: 3px;
+                                                    height: 3px;
+                                                    background-color: #000;
+                                                    border-radius: 100%;
+                                                    margin-top: 7px;
+                                                    margin-right: 10px;
+                                                }
+
+                                                p {
+                                                    width: calc(100% - 13px);
+                                                    font-family: $f400;
+                                                    font-size: 16px;
+                                                    line-height: 1.3;
+                                                    color: #000;
+                                                    word-break: keep-all;
+                                                }
+                                            }
+                                        }
+
+                                        .text {
+                                            font-family: $f400;
+                                            font-size: 16px;
+                                            line-height: 1.3;
+                                            color: #000;
+
+                                            b {
+                                                font-family: $f700;
+                                            }
+                                        }
+
+                                        .box_text {
+                                            background-color: #f6f6f6;
+                                            border-radius: 15px;
+                                            padding: 15px;
+                                            margin-top: 30px;
+
+                                            .tit {
+                                                font-family: $f700;
+                                                font-size: 16px;
+                                                line-height: 1.3;
+                                                color: #666;
+                                                margin-bottom: 10px;
+                                                display: block;
+                                            }
+
+                                            .txt {
+                                                font-family: $f400;
+                                                font-size: 15px;
+                                                line-height: 1.3;
+                                                color: #666;
+                                            }
+
+                                            .text_list_wrap {
+                                                width: 100%;
+
+                                                > li {
+                                                    width: 100%;
+                                                    display: flex;
+                                                    flex-direction: row;
+                                                    align-items: flex-start;
+                                                    margin-bottom: 5px;
+
+                                                    &:last-of-type {
+                                                        margin-bottom: 0;
+                                                    }
+
+                                                    span {
+                                                        width: 3px;
+                                                        height: 3px;
+                                                        background-color: #666;
+                                                        border-radius: 100%;
+                                                        margin-top: 7px;
+                                                        margin-right: 10px;
+                                                    }
+
+                                                    p {
+                                                        width: calc(100% - 13px);
+                                                        font-family: $f400;
+                                                        font-size: 15px;
+                                                        line-height: 1.3;
+                                                        color: #666;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .list-text {
+                                            font-family: $f600;
+                                            font-size: 17px;
+                                            line-height: 1.3;
+                                            color: #000;
+                                            margin-bottom: 5px;
+                                            display: block;
+                                        }
+
+                                        .img_box {
+                                            width: 100%;
+                                            display: flex;
+                                            flex-direction: row;
+                                            flex-wrap: wrap;
+                                            align-items: center;
+
+                                            > li {
+                                                width: 100%;
+                                                margin-bottom: 15px;
+                                                padding-bottom: 15px;
+                                                display: flex;
+                                                flex-direction: row;
+                                                flex-wrap: wrap;
+                                                align-items: center;
+                                                position: relative;
+
+                                                &::after {
+                                                    content: '\f107';
+                                                    display: block;
+                                                    position: absolute;
+                                                    bottom: -10px;
+                                                    left: 50%;
+                                                    transform: translateX(-50%);
+                                                    font-family: 'axicon';
+                                                    font-size: 20px;
+                                                    color: #000;
+                                                }
+
+                                                &:last-child {
+                                                    margin-bottom: 0;
+                                                    padding-bottom: 0;
+
+                                                    &::after {
+                                                        display: none;
+                                                    }
+                                                }
+
+                                                &:nth-child(2) {
+
+                                                    .circle {
+                                                        background-color: #84a4d3;
+                                                    }
+                                                }
+
+                                                &:nth-child(3) {
+
+                                                    .circle {
+                                                        background-color: #efa2a2;
+                                                    }
+                                                }
+
+                                                .circle {
+                                                    width: 100px;
+                                                    height: 35px;
+                                                    background-color: $M_color;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    font-family: $f700;
+                                                    font-size: 15px;
+                                                    line-height: 1.3;
+                                                    color: #fff;
+                                                }
+
+                                                .text {
+                                                    width: calc(100% - 110px);
+                                                    margin-left: 10px;
+                                                    font-family: $f400;
+                                                    font-size: 15px;
+                                                    line-height: 1.3;
+                                                    color: $S_color;
+                                                }
+                                            }
+                                        }
+
+                                        .counselting-list {
+                                            width: 100%;
+                                            display: flex;
+                                            flex-direction: row;
+                                            flex-wrap: wrap;
+                                            align-items: flex-start;
+
+                                            > li {
+                                                width: calc(100%/2 - 10px);
+                                                margin-right: 20px;
+
+                                                &:last-child {
+                                                    margin-right: 0;
+                                                }
+
+                                                .title {
+                                                    width: 100%;
+                                                    height: 35px;
+                                                    border: 1px solid $M_color;
+                                                    border-radius: 30px;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    font-family: $f700;
+                                                    font-size: 15px;
+                                                    color: #000;
+                                                    margin-bottom: 10px;
+                                                }
+
+                                                .text {
+                                                    font-family: $f400;
+                                                    font-size: 15px;
+                                                    line-height: 1.5;
+                                                    color: #000;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.main_cont4 {
+                    background-color: #f4f7ff;
+                    background: url($url + "section4_bg.png")no-repeat;
+                    background-size: cover;
+
+                    .inner {
+                        @include inner;
+                    }
+
+                    .textbox {
+                        text-align: center;
+                        margin-bottom: 50px;
+                    }
+
+                    .contents {
+                        overflow: hidden;
+                        padding: 15px;
+
+                        .cont4_Swiper {
+                            overflow: visible;
+                            height: 615px;
+                        }
+
+                        .swiper-slide {
+                            height: 100%;
+                            padding: 30px;
+                            background-color: #fff;
+                            border-radius: 30px;
+                            box-shadow: 5px 8px 18px rgba(0, 0, 0, 0.1);
+
+                            .top_wrap {
+                                width: 100%;
+                                margin-bottom: 30px;
+                                display: flex;
+                                flex-direction: row;
+                                flex-wrap: wrap;
+                                align-items: center;
+
+                                .icon {
+                                    height: 75px;
+                                    margin-right: 30px;
+
+                                    .desktop_icon {
+                                        display: block;
+                                    }
+
+                                    .mobile_icon {
+                                        display: none;
+                                    }
+                                }
+
+                                .title {
+                                    width: calc(100% - 105px);
+                                    font-family: $f700;
+                                    font-size: 28px;
+                                    line-height: 1.3;
+                                    color: $S_color;
+                                }
+                            }
+
+                            .info_wrap {
+
+                                .row {
+                                    margin-bottom: 40px;
+
+                                    &:last-of-type {
+                                        margin-bottom: 0;
+                                    }
+
+                                    .tag {
+                                        font-family: $f700;
+                                        font-size: 17px;
+                                        line-height: 1.3;
+                                        color: $S_color;
+                                        background-color: #f4f7ff;
+                                        border-radius: 30px;
+                                        padding: 5px 15px;
+                                        display: inline-flex;
+                                        flex-direction: row;
+                                        justify-content: center;
+                                        align-items: center;
+                                        margin-bottom: 15px;
+
+                                        i {
+                                            width: 15px;
+                                            height: 15px;
+                                            background-color: $M_color;
+                                            border-radius: 100%;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            font-size: 10px;
+                                            color: #fff;
+                                            margin-right: 10px;
+                                        }
+                                    }
+
+                                    .blue_t {
+                                        font-family: $f400;
+                                        font-size: 16px;
+                                        line-height: 1.3;
+                                        color: $S_color;
+                                    }
+
+                                    .text_list_wrap {
+                                        width: 100%;
+
+                                        > li {
+                                            width: 100%;
+                                            display: flex;
+                                            flex-direction: row;
+                                            align-items: flex-start;
+                                            margin-bottom: 5px;
+
+                                            &:last-of-type {
+                                                margin-bottom: 0;
+                                            }
+
+                                            span {
+                                                width: 3px;
+                                                height: 3px;
+                                                background-color: #000;
+                                                border-radius: 100%;
+                                                margin-top: 7px;
+                                                margin-right: 10px;
+                                            }
+
+                                            p {
+                                                width: calc(100% - 13px);
+                                                font-family: $f400;
+                                                font-size: 16px;
+                                                line-height: 1.3;
+                                                color: #000;
+                                                word-break: keep-all;
+                                            }
+                                        }
+                                    }
+
+                                    .text {
+                                        font-family: $f400;
+                                        font-size: 16px;
+                                        line-height: 1.3;
+                                        color: #000;
+
+                                        b {
+                                            font-family: $f700;
+                                        }
+                                    }
+
+                                    .list-text {
+                                        font-family: $f700;
+                                        font-size: 17px;
+                                        line-height: 1.3;
+                                        color: #000;
+                                        margin-bottom: 5px;
+                                        display: block;
+                                    }
+
+                                    .number-list {
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        flex-wrap: wrap;
+                                        align-items: center;
+
+                                        > li {
+                                            margin-right: 10px;
+                                            font-family: $f400;
+                                            font-size: 16px;
+                                            line-height: 1.3;
+                                            color: #000;
+
+                                            &:last-child {
+                                                margin-right: 0;
+                                            }
+                                        }
+                                    }
+
+                                    .img_box {
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        flex-wrap: wrap;
+                                        align-items: center;
+
+                                        > li {
+                                            width: 100%;
+                                            margin-bottom: 15px;
+                                            padding-bottom: 15px;
+                                            display: flex;
+                                            flex-direction: row;
+                                            flex-wrap: wrap;
+                                            align-items: center;
+                                            position: relative;
+
+                                            &::after {
+                                                content: '\f107';
+                                                display: block;
+                                                position: absolute;
+                                                bottom: -10px;
+                                                left: 50%;
+                                                transform: translateX(-50%);
+                                                font-family: 'axicon';
+                                                font-size: 20px;
+                                                color: #000;
+                                            }
+
+                                            &:last-child {
+                                                margin-bottom: 0;
+                                                padding-bottom: 0;
+
+                                                &::after {
+                                                    display: none;
+                                                }
+                                            }
+
+                                            &:nth-child(2) {
+
+                                                .circle {
+                                                    background-color: #84a4d3;
+                                                }
+                                            }
+
+                                            &:nth-child(3) {
+
+                                                .circle {
+                                                    background-color: #efa2a2;
+                                                }
+                                            }
+
+                                            .circle {
+                                                width: 100%;
+                                                height: 35px;
+                                                background-color: $M_color;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                font-family: $f700;
+                                                font-size: 15px;
+                                                line-height: 1.3;
+                                                color: #fff;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .swiper-options {
+                            width: 100%;
+                            margin-top: 50px;
+                            position: relative;
+                            bottom: 0;
+                            right: 0;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-end;
+                            align-items: center;
+
+                            .swiper-button-next,
+                            .swiper-button-prev {
+                                position: relative;
+                                top: 0;
+                                width: 75px;
+                                height: 75px;
+                                margin: 0;
+                                background-color: #fff;
+                                border-radius: 100%;
+                                box-shadow: 5px 8px 18px rgba(0, 0, 0, 0.1);
+                            }
+
+                            .swiper-button-next,
+                            .swiper-rtl .swiper-button-prev {
+                                right: 0;
+                                left: auto;
+                            }
+                            .swiper-button-prev,
+                            .swiper-rtl .swiper-button-next {
+                                left: 0;
+                                right: auto;
+                                margin-right: 50px;
+                            }
+
+                            .swiper-button-prev:after,
+                            .swiper-rtl .swiper-button-next:after {
+                                width: 30px;
+                                height: 18px;
+                                background: url($url + "icon/prev_ico.png")no-repeat;
+                                background-size: contain;
+                                font-size: 0;
+                            }
+                            .swiper-button-next:after,
+                            .swiper-rtl .swiper-button-prev:after {
+                                width: 30px;
+                                height: 18px;
+                                background: url($url + "icon/next_ico.png")no-repeat;
+                                background-size: contain;
+                                font-size: 0;
+                            }
+                        }
+                    }
+                }
+
+                &.main_cont5 {
+
+                    .inner {
+                        @include inner;
+                    }
+
+                    .contents {
+                        width: 100%;
+                        margin-top: 50px;
+
+                        .row {
+                            width: 100%;
+                            margin-bottom: 80px;
+
+                            &:last-of-type {
+                                margin-bottom: 0;
+                            }
+
+                            .table-head {
+                                width: 100%;
+                                display: flex;
+                                flex-direction: row;
+                                flex-wrap: wrap;
+                                align-items: center;
+                                margin-bottom: 40px;
+
+                                .com_name {
+                                    font-family: $f700;
+                                    font-size: 26px;
+                                    line-height: 1.3;
+                                    color: #fff;
+                                    padding: 8px 20px;
+                                    background-color: $M_color;
+                                    display: inline-flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin-right: 50px;
+                                }
+
+                                .com_info {
+                                    font-family: $f400;
+                                    font-size: 22px;
+                                    line-height: 1.3;
+                                    color: #000;
+                                }
+                            }
+
+                            .com_table {
+                                max-width: 100%;
+                                width: 100%;
+                                table-layout: fixed;
+                                border-top: 2px solid #222;
+
+                                &.com_table1 {
+
+                                    thead {
+
+                                        tr {
+
+                                            th {
+
+                                                &:nth-child(1) {
+                                                    width: 15%;
+                                                }
+                                                &:nth-child(2) {
+                                                    width: 10%;
+                                                }
+                                                &:nth-child(3) {
+                                                    width: auto;
+                                                    text-align: left;
+                                                    padding-left: 30px;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    tbody {
+
+                                        tr {
+
+                                            td {
+
+                                                &:nth-child(3) {
+                                                    text-align: left;
+                                                    padding-left: 30px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &.com_table2 {
+
+                                    thead {
+
+                                        tr {
+
+                                            th {
+
+                                                &:nth-child(1) {
+                                                    width: 15%;
+                                                }
+                                                &:nth-child(2) {
+                                                    width: 10%;
+                                                }
+                                                &:nth-child(3) {
+                                                    width: 10%;
+                                                }
+                                                &:nth-child(4) {
+                                                    width: 35%;
+                                                }
+                                                &:nth-child(5) {
+                                                    width: 30%;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    tbody {
+
+                                        tr {
+
+                                            td {
+
+                                                &:nth-child(4),
+                                                &:nth-child(5) {
+                                                    text-align: left;
+                                                    padding-left: 30px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                thead {
+                                    width: 100%;
+
+                                    tr {
+                                        background-color: #ecf5f5;
+                                        border-bottom: 1px solid #dde6e6;
+
+                                        th {
+                                            font-family: $f700;
+                                            font-size: 18px;
+                                            line-height: 1.3;
+                                            color: #222;
+                                            border-right: 1px solid #dde6e6;
+                                            padding: 10px 20px;
+
+                                            &:last-child {
+                                                border-right: 0;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                tbody {
+                                    width: 100%;
+
+                                    tr {
+                                        border-bottom: 1px solid #dde6e6;
+
+                                        td {
+                                            font-family: $f400;
+                                            font-size: 16px;
+                                            line-height: 1.3;
+                                            color: #222;
+                                            border-right: 1px solid #dde6e6;
+                                            padding: 10px 20px;
+                                            vertical-align: middle;
+                                            text-align: center;
+
+                                            &:last-child {
+                                                border-right: 0;
+                                            }
+
+                                            .profile-list {
+
+                                                > li {
+                                                    margin-bottom: 3px;
+                                                    word-break: keep-all;
+
+                                                    &:last-of-type {
+                                                        margin-bottom: 0;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.main_cont6 {
+                    background: url($url + "section6_bg.png")no-repeat;
+                    background-size: cover;
+                    overflow: hidden;
+
+                    .inner {
+                        @include inner;
+                        padding: 0;
+                    }
+
+                    .contents {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        align-items: flex-start;
+
+                        .lef {
+                            height: 530px;
+                            @include lef;
+                            padding-left: calc(260 / 1920 * 100%);
+                            margin-right: 70px;
+                            position: relative;
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            align-content: space-between;
+
+                            .swiper-options {
+                                width: auto;
+                                position: relative;
+                                bottom: 0;
+                                right: 0;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+
+                                .swiper-button-next,
+                                .swiper-button-prev {
+                                    position: relative;
+                                    top: 0;
+                                    width: 75px;
+                                    height: 75px;
+                                    margin: 0;
+                                    background-color: #fff;
+                                    border-radius: 100%;
+                                    box-shadow: 5px 8px 18px rgba(0, 0, 0, 0.1);
+                                }
+
+                                .swiper-button-next,
+                                .swiper-rtl .swiper-button-prev {
+                                    right: 0;
+                                    left: auto;
+                                }
+                                .swiper-button-prev,
+                                .swiper-rtl .swiper-button-next {
+                                    left: 0;
+                                    right: auto;
+                                    margin-right: 50px;
+                                }
+
+                                .swiper-button-prev:after,
+                                .swiper-rtl .swiper-button-next:after {
+                                    width: 30px;
+                                    height: 18px;
+                                    background: url($url + "icon/prev_ico.png")no-repeat;
+                                    background-size: contain;
+                                    font-size: 0;
+                                }
+                                .swiper-button-next:after,
+                                .swiper-rtl .swiper-button-prev:after {
+                                    width: 30px;
+                                    height: 18px;
+                                    background: url($url + "icon/next_ico.png")no-repeat;
+                                    background-size: contain;
+                                    font-size: 0;
+                                }
+                            }
+                        }
+
+                        .rig {
+                            height: 530px;
+                            padding: 15px;
+                            @include rig;
+                            padding-right: calc(260 / 1920 * 100%);
+                            overflow: hidden;
+                            position: relative;
+                            z-index: 4;
+
+                            .cont6_Swiper {
+                                overflow: visible;
+
+                                .swiper-slide {
+                                    height: 100%;
+                                    padding: 30px;
+                                    background-color: #fff;
+                                    box-shadow: 5px 8px 18px rgba(0, 0, 0, 15%);
+                                    border-radius: 30px;
+                                    transition: all 0.3s ease-in-out;
+
+                                    &:hover {
+                                        transform: translateY(-15px);
+                                        background-color: $M_color;
+
+                                        .title {
+                                            color: #fff;
+
+                                            b {
+                                                color: #fff;
+                                            }
+                                        }
+
+                                        .row {
+
+                                            .blue_t {
+                                                color: #fff;
+
+                                                b {
+                                                    color: #fff;
+                                                }
+                                            }
+
+                                            .text_list_wrap {
+
+                                                > li {
+
+                                                    span {
+                                                        background-color: #fff;
+                                                    }
+
+                                                    p {
+                                                        color: #fff;
+
+                                                        b {
+                                                            color: #fff;
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            .text {
+                                                color: #fff;
+
+                                                b {
+                                                    font-family: $f700;
+                                                    color: #fff;
+                                                }
+                                            }
+
+                                            .box_text {
+                                                background-color: #fff;
+
+                                                .tit {
+                                                    color: #000;
+                                                }
+
+                                                .txt {
+                                                    color: #000;
+                                                }
+
+                                                .text_list_wrap {
+
+                                                    > li {
+
+                                                        span {
+                                                            background-color: #000;
+                                                        }
+
+                                                        p {
+                                                            color: #000;
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            .list-text {
+                                                color: #fff;
+                                            }
+
+                                            .img_box {
+
+                                                > li {
+
+                                                    &::after {
+                                                        color: #fff;
+                                                    }
+
+                                                    &:last-child {
+                                                        margin-bottom: 0;
+                                                        padding-bottom: 0;
+
+                                                        &::after {
+                                                            display: none;
+                                                        }
+                                                    }
+
+                                                    &:nth-child(2) {
+
+                                                        .circle {
+                                                            background-color: #fff;
+                                                        }
+                                                    }
+
+                                                    &:nth-child(3) {
+
+                                                        .circle {
+                                                            background-color: #fff;
+                                                        }
+                                                    }
+
+                                                    .circle {
+                                                        background-color: #fff;
+                                                        color: $S_color;
+                                                    }
+
+                                                    .text {
+                                                        color: #fff;
+                                                    }
+                                                }
+                                            }
+
+                                            .counselting-list {
+                                                width: 100%;
+                                                display: flex;
+                                                flex-direction: row;
+                                                flex-wrap: wrap;
+                                                align-items: flex-start;
+
+                                                > li {
+                                                    width: calc(100%/2 - 10px);
+                                                    margin-right: 20px;
+
+                                                    &:last-child {
+                                                        margin-right: 0;
+                                                    }
+
+                                                    .title {
+                                                        border: 1px solid #fff;
+                                                        color: #fff;
+                                                    }
+
+                                                    .text {
+                                                        color: #fff;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .title {
+                                        width: 100%;
+                                        font-family: $f400;
+                                        font-size: 26px;
+                                        line-height: 1.3;
+                                        color: #000;
+                                        margin-bottom: 30px;
+                                        display: block;
+
+                                        b {
+                                            font-family: $f700;
+                                            color: $S_color;
+                                        }
+                                    }
+
+                                    .row {
+                                        margin-bottom: 20px;
+                                        padding-bottom: 20px;
+                                        border-bottom: 1px dashed #ededed;
+
+                                        &:last-of-type {
+                                            margin-bottom: 0;
+                                            padding-bottom: 0;
+                                            border-bottom: 0;
+                                        }
+
+                                        .tag {
+                                            font-family: $f700;
+                                            font-size: 17px;
+                                            line-height: 1.3;
+                                            color: $S_color;
+                                            background-color: #f4f7ff;
+                                            border-radius: 30px;
+                                            padding: 5px 15px;
+                                            display: inline-flex;
+                                            flex-direction: row;
+                                            justify-content: center;
+                                            align-items: center;
+                                            margin-bottom: 15px;
+
+                                            i {
+                                                width: 15px;
+                                                height: 15px;
+                                                background-color: $M_color;
+                                                border-radius: 100%;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                font-size: 10px;
+                                                color: #fff;
+                                                margin-right: 10px;
+                                            }
+                                        }
+
+                                        .blue_t {
+                                            font-family: $f400;
+                                            font-size: 16px;
+                                            line-height: 1.3;
+                                            color: $S_color;
+
+                                            b {
+                                                font-family: $f700;
+                                                color: $S_color;
+                                            }
+                                        }
+
+                                        .text_list_wrap {
+                                            width: 100%;
+
+                                            > li {
+                                                width: 100%;
+                                                display: flex;
+                                                flex-direction: row;
+                                                align-items: flex-start;
+                                                margin-bottom: 5px;
+
+                                                &:last-of-type {
+                                                    margin-bottom: 0;
+                                                }
+
+                                                span {
+                                                    width: 3px;
+                                                    height: 3px;
+                                                    background-color: #000;
+                                                    border-radius: 100%;
+                                                    margin-top: 7px;
+                                                    margin-right: 10px;
+                                                }
+
+                                                p {
+                                                    width: calc(100% - 13px);
+                                                    font-family: $f400;
+                                                    font-size: 16px;
+                                                    line-height: 1.3;
+                                                    color: #000;
+                                                    word-break: keep-all;
+
+                                                    b {
+                                                        font-family: $f800;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .text {
+                                            font-family: $f400;
+                                            font-size: 16px;
+                                            line-height: 1.3;
+                                            color: #000;
+
+                                            b {
+                                                font-family: $f700;
+                                            }
+                                        }
+
+                                        .box_text {
+                                            background-color: #f6f6f6;
+                                            border-radius: 15px;
+                                            padding: 15px;
+                                            margin-top: 30px;
+
+                                            .tit {
+                                                font-family: $f700;
+                                                font-size: 16px;
+                                                line-height: 1.3;
+                                                color: #666;
+                                                margin-bottom: 10px;
+                                                display: block;
+                                            }
+
+                                            .txt {
+                                                font-family: $f400;
+                                                font-size: 15px;
+                                                line-height: 1.3;
+                                                color: #666;
+                                            }
+
+                                            .text_list_wrap {
+                                                width: 100%;
+
+                                                > li {
+                                                    width: 100%;
+                                                    display: flex;
+                                                    flex-direction: row;
+                                                    align-items: flex-start;
+                                                    margin-bottom: 5px;
+
+                                                    &:last-of-type {
+                                                        margin-bottom: 0;
+                                                    }
+
+                                                    span {
+                                                        width: 3px;
+                                                        height: 3px;
+                                                        background-color: #666;
+                                                        border-radius: 100%;
+                                                        margin-top: 7px;
+                                                        margin-right: 10px;
+                                                    }
+
+                                                    p {
+                                                        width: calc(100% - 13px);
+                                                        font-family: $f400;
+                                                        font-size: 15px;
+                                                        line-height: 1.3;
+                                                        color: #666;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .list-text {
+                                            font-family: $f600;
+                                            font-size: 17px;
+                                            line-height: 1.3;
+                                            color: #000;
+                                            margin-bottom: 5px;
+                                            display: block;
+                                        }
+
+                                        .img_box {
+                                            width: 100%;
+                                            display: flex;
+                                            flex-direction: row;
+                                            flex-wrap: wrap;
+                                            align-items: center;
+
+                                            > li {
+                                                width: 100%;
+                                                margin-bottom: 15px;
+                                                padding-bottom: 15px;
+                                                display: flex;
+                                                flex-direction: row;
+                                                flex-wrap: wrap;
+                                                align-items: center;
+                                                position: relative;
+
+                                                &::after {
+                                                    content: '\f107';
+                                                    display: block;
+                                                    position: absolute;
+                                                    bottom: -10px;
+                                                    left: 50%;
+                                                    transform: translateX(-50%);
+                                                    font-family: 'axicon';
+                                                    font-size: 20px;
+                                                    color: #000;
+                                                }
+
+                                                &:last-child {
+                                                    margin-bottom: 0;
+                                                    padding-bottom: 0;
+
+                                                    &::after {
+                                                        display: none;
+                                                    }
+                                                }
+
+                                                &:nth-child(2) {
+
+                                                    .circle {
+                                                        background-color: #84a4d3;
+                                                    }
+                                                }
+
+                                                &:nth-child(3) {
+
+                                                    .circle {
+                                                        background-color: #efa2a2;
+                                                    }
+                                                }
+
+                                                .circle {
+                                                    width: 100px;
+                                                    height: 35px;
+                                                    background-color: $M_color;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    font-family: $f700;
+                                                    font-size: 15px;
+                                                    line-height: 1.3;
+                                                    color: #fff;
+                                                }
+
+                                                .text {
+                                                    width: calc(100% - 110px);
+                                                    margin-left: 10px;
+                                                    font-family: $f400;
+                                                    font-size: 15px;
+                                                    line-height: 1.3;
+                                                    color: $S_color;
+                                                }
+                                            }
+                                        }
+
+                                        .counselting-list {
+                                            width: 100%;
+                                            display: flex;
+                                            flex-direction: row;
+                                            flex-wrap: wrap;
+                                            align-items: flex-start;
+
+                                            > li {
+                                                width: calc(100%/2 - 10px);
+                                                margin-right: 20px;
+
+                                                &:last-child {
+                                                    margin-right: 0;
+                                                }
+
+                                                .title {
+                                                    width: 100%;
+                                                    height: 35px;
+                                                    border: 1px solid $M_color;
+                                                    border-radius: 30px;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    font-family: $f700;
+                                                    font-size: 15px;
+                                                    color: #000;
+                                                    margin-bottom: 10px;
+                                                }
+
+                                                .text {
+                                                    font-family: $f400;
+                                                    font-size: 15px;
+                                                    line-height: 1.5;
+                                                    color: #000;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.contact_wrap {
+
+                    .inner {
+                        @include inner;
+                    }
+
+                    .contents {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        align-items: center;
+
+                        .lef {
+                            @include lef;
+                            margin-right: 70px;
+
+                            .textbox {
+
+                                .main-title {
+                                    font-size: 90px;
+                                }
+                            }
+                        }
+
+                        .rig {
+                            @include rig;
+
+                            .contact-frm-wrap {
+
+                                .contact_frm {
+
+                                    .row {
+                                        margin-bottom: 40px;
+
+                                        &:nth-child(4) {
+                                            margin-bottom: 0;
+                                        }
+
+                                        .input-box {
+                                            display: flex;
+                                            flex-direction: row;
+                                            flex-wrap: wrap;
+                                            align-items: center;
+
+                                            > li {
+                                                width: 49%;
+                                                margin-right: 2%;
+
+                                                &:last-of-type {
+                                                    margin-right: 0;
+                                                }
+
+                                                &.w100 {
+                                                    width: 100%;
+                                                }
+
+                                                .text {
+                                                    font-family: $f700;
+                                                    font-size: 18px;
+                                                    line-height: 1.3;
+                                                    color: #212121;
+                                                    margin-bottom: 5px;
+                                                    display: block;
+                                                }
+
+                                                .input_ {
+                                                    width: 100%;
+                                                    height: 50px;
+                                                    padding: 0;
+                                                    border: 0;
+                                                    border-bottom: 1px solid #e1e3e6;
+                                                    font-family: $f400;
+                                                    font-size: 16px;
+                                                    line-height: 1.3;
+                                                    color: #263860;
+                                                    background-color: #fff;
+                                                    outline: none;
+
+                                                    &::placeholder {
+                                                        font-family: $f400;
+                                                        font-size: 16px;
+                                                        line-height: 1.3;
+                                                        color: #ccc;
+                                                    }
+                                                }
+
+                                                .frm_contents {
+                                                    height: 300px;
+                                                    padding: 15px 0;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .fot-options {
+                                        width: 100%;
+                                        display: flex;
+                                        flex-direction: row;
+                                        flex-wrap: wrap;
+                                        justify-content: space-between;
+                                        margin-top: 15px;
+
+                                        .checkbox {
+                                            display: flex;
+                                            align-items: center;
+
+                                            .agr_btn {
+                                                display: inline-block;
+                                                width: 16px;
+                                                height: 16px;
+                                                overflow: hidden;
+                                                background-color: transparent;
+                                                border: 1px solid #ccc;
+                                                border-radius: 2px;
+                                            }
+
+                                            .agrbtn_label {
+                                                margin-left: 5px;
+                                                display: inline-block;
+                                                vertical-align: middle;
+                                                font-family: $f400;
+                                                font-size: 18px;
+                                                color: #000;
+                                            }
+
+                                            .agr_view {
+                                                font-family: $f400;
+                                                font-size: 14px;
+                                                line-height: 1.3;
+                                                color: #ccc;
+                                                text-decoration: underline;
+                                                margin-left: 10px;
+                                            }
+                                        }
+
+                                        .submit_btn {
+                                            @include btn;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // 개인정보처리방침 영역
+        &.privacy-page {
+            padding: 80px 0;
+
+            article {
+
+                &.privacy_cont {
+
+                    &.privacy_cont1 {
+
+                        .inner {
+                            max-width: 1000px;
+                            width: 100%;
+                            margin: 0 auto;
+                        }
+
+                        .top_title_wrap {
+                            margin-bottom: 30px;
+                            padding-bottom: 30px;
+                            border-bottom: 2px solid #222;
+
+                            .title {
+                                font-family: $f800;
+                                font-size: 40px;
+                                line-height: 1.3;
+                                color: #222;
+                            }
+                        }
+
+                        .privacy-wrap {
+
+                            .row {
+                                margin-bottom: 40px;
+
+                                &:last-of-type {
+                                    margin-bottom: 0;
+                                }
+
+                                .text-box {
+                                    margin-bottom: 40px;
+
+                                    .row-title {
+                                        font-family: $f600;
+                                        font-size: 28px;
+                                        line-height: 1.5;
+                                        color: #222;
+                                        letter-spacing: -0.03em;
+                                        margin-bottom: 20px;
+                                        display: block;
+                                    }
+
+                                    .row-info {
+                                        font-family: $f300;
+                                        font-size: 18px;
+                                        line-height: 1.5;
+                                        color: #222;
+                                    }
+                                }
+
+                                .contents {
+
+                                    .box-contents {
+                                        width: 100%;
+                                        padding: 20px 30px;
+                                        border: 1px solid #979ca8;
+
+                                        > ul {
+                                            display: flex;
+                                            flex-direction: row;
+                                            flex-wrap: wrap;
+
+                                            > li {
+                                                width: calc(100%/2 - 10px);
+                                                margin-top: 10px;
+                                                margin-right: 20px;
+                                                display: flex;
+                                                flex-direction: row;
+                                                align-items: center;
+
+                                                &:nth-child(n-1):nth-child(-n+2) {
+                                                    margin-top: 0;
+                                                }
+
+                                                &:nth-child(2n) {
+                                                    margin-right: 0;
+                                                }
+
+                                                &:last-child {
+                                                    margin-right: 0;
+                                                }
+
+                                                &:hover {
+
+                                                    a,
+                                                    span {
+                                                        font-family: $f700;
+                                                        color: $M_color;
+                                                    }
+                                                }
+
+                                                span {
+                                                    width: 20px;
+                                                    font-family: $f400;
+                                                    font-size: 16px;
+                                                    line-height: 1.3;
+                                                    color: #727680;
+                                                    transition: all 0.3s ease;
+                                                }
+
+                                                a {
+                                                    width: calc(100% - 20px);
+                                                    font-family: $f400;
+                                                    font-size: 16px;
+                                                    line-height: 1.3;
+                                                    color: #727680;
+                                                    transition: all 0.3s ease;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .list-box {
+                                        margin-top: 30px;
+
+                                        .circle-list {
+                                            counter-reset: circle 0;
+
+                                            .circle-list__item {
+                                                padding-left: 25px;
+                                                margin-bottom: 30px;
+                                                position: relative;
+
+                                                &::before {
+                                                    position: absolute;
+                                                    top: 0;
+                                                    left: 0;
+                                                    counter-increment: circle 1;
+                                                    content: counter(circle);
+                                                    text-align: center;
+                                                    border: 1px solid #9EAEB9;
+                                                    border-radius: 50%;
+                                                    width: 16px;
+                                                    height: 16px;
+                                                    line-height: 16px;
+                                                    font-size: 13px;
+                                                }
+
+                                                &:last-child {
+                                                    margin-bottom: 0;
+                                                }
+
+                                                .textbox {
+                                                    width: 100%;
+                                                    margin-bottom: 20px;
+
+                                                    .title {
+                                                        font-family: $f400;
+                                                        font-size: 16px;
+                                                        line-height: 1.3;
+                                                        color: #222;
+                                                        margin-bottom: 10px;
+                                                        display: block;
+                                                    }
+
+                                                    .text {
+                                                        font-family: $f400;
+                                                        font-size: 15px;
+                                                        line-height: 1.4;
+                                                        color: #222;
+
+                                                        b {
+                                                            font-family: $f700;
+                                                        }
+                                                    }
+                                                }
+
+                                                .privacy-table {
+                                                    width: 100%;
+                                                    table-layout: fixed;
+                                                    border-top: 1px solid #ccc;
+
+                                                    &.pt2 {
+
+                                                        thead {
+
+                                                            tr {
+
+                                                                th {
+
+                                                                    &:nth-child(1) {
+                                                                        width: 25%;
+                                                                    }
+                                                                    &:nth-child(2) {
+                                                                        width: 25%;
+                                                                    }
+                                                                    &:nth-child(3) {
+                                                                        width: 25%;
+                                                                    }
+                                                                    &:nth-child(4) {
+                                                                        width: 25%;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                .num-list {
+                                                    counter-reset: num;
+
+                                                    > li {
+                                                        padding-left: 15px;
+                                                        position: relative;
+                                                        font-family: $f400;
+                                                        font-size: 15px;
+                                                        line-height: 1.3;
+                                                        color: #222;
+                                                        margin-bottom: 8px;
+
+                                                        &::before {
+                                                            position: absolute;
+                                                            top: 0;
+                                                            left: 0;
+                                                            counter-increment: num;
+                                                            content: counter(num) ". ";
+                                                            color: #222;
+                                                        }
+
+                                                        &:last-child {
+                                                            margin-bottom: 0;
+                                                        }
+
+                                                        > a {
+                                                            color: $M_color;
+                                                        }
+                                                    }
+                                                }
+
+                                                .dot-list {
+
+                                                    .dot-list__item {
+                                                        position: relative;
+                                                        font-size: 14px;
+                                                        padding-left: 12px;
+                                                        line-height: 1.8;
+
+                                                        &::before {
+                                                            content: '';
+                                                            display: inline-block;
+                                                            position: absolute;
+                                                            left: 0;
+                                                            top: 12px;
+                                                            vertical-align: middle;
+                                                            margin-right: 10px;
+                                                            background-color: #333;
+                                                            width: 3px;
+                                                            height: 3px;
+                                                            border-radius: 100%;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .privacy-table {
+                                        width: 100%;
+                                        table-layout: fixed;
+                                        border-top: 1px solid #ccc;
+
+                                        &.pt3 {
+
+                                            thead {
+
+                                                tr {
+
+                                                    th {
+
+                                                        &:nth-child(1) {
+                                                            width: 25%;
+                                                        }
+                                                        &:nth-child(2) {
+                                                            width: 25%;
+                                                        }
+                                                        &:nth-child(3) {
+                                                            width: auto;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        &.pt4 {
+
+                                            thead {
+
+                                                tr {
+
+                                                    th {
+
+                                                        &:nth-child(1) {
+                                                            width: auto;
+                                                        }
+                                                        &:nth-child(2) {
+                                                            width: 30%;
+                                                        }
+                                                        &:nth-child(3) {
+                                                            width: 30%;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        thead {
+
+                                            tr {
+                                                background-color: #f9f9f9;
+
+                                                th {
+                                                    padding: 10px 12px;
+                                                    font-family: $f400;
+                                                    font-size: 14px;
+                                                    line-height: 1.3;
+                                                    color: #222;
+                                                    text-align: left;
+                                                    border-bottom: 1px solid #ccc;
+                                                    vertical-align: middle;
+
+                                                    &:nth-child(1) {
+                                                        width: 15%;
+                                                    }
+                                                    &:nth-child(2) {
+                                                        width: 20%;
+                                                    }
+                                                    &:nth-child(3) {
+                                                        width: 10%;
+                                                    }
+                                                    &:nth-child(4) {
+                                                        width: auto;
+                                                    }
+                                                    &:nth-child(5) {
+                                                        width: 25%;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        tbody {
+
+                                            tr {
+
+                                                td {
+                                                    padding: 10px 12px;
+                                                    font-family: $f400;
+                                                    font-size: 15px;
+                                                    line-height: 1.5;
+                                                    color: #222;
+                                                    text-align: left;
+                                                    border-bottom: 1px solid #ccc;
+                                                    border-left: 1px solid #ccc;
+                                                    vertical-align: middle;
+
+                                                    &.nb-l {
+                                                        border-left: none;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .btn-wrap {
+                                width: 100%;
+                                text-align: center;
+
+                                .homepage_btn {
+                                    @include btn;
+                                    display: inline-flex;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .right_menu {
+        display: none;
+        position: fixed;
+        top: 50%;
+        right: 50px;
+        transform: translateY(-50%);
+        z-index: 200;
+
+        > ul {
+
+            > li {
+                margin-bottom: 10px;
+                text-align: right;
+                position: relative;
+                transition: all 0.3s ease-in-out;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 5px;
+                    height: 5px;
+                    background-color: #ddd;
+                    border-radius: 100%;
+                    position: absolute;
+                    top: 50%;
+                    right: -25px;
+                    transform: translateY(-50%);
+                    transition: all 0.3s ease-in-out;
+                }
+
+                &:hover {
+
+                    &::after {
+                        background-color: #222;
+                    }
+
+                    > a {
+                        font-family: $f600;
+                        color: #222;
+                    }
+                }
+
+                > a {
+                    font-family: $f300;
+                    font-size: 16px;
+                    line-height: 1.3;
+                    color: #ddd;
+                    display: block;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+@include desktop {
+    .wrap {
+
+        section {
+
+            &.main-page {
+
+                article {
+
+                    .textbox {
+                        @include textbox;
+
+                        .main-title {
+                            font-size: 34px;
+                        }
+
+                        .sub-text {
+                            font-size: 20px;
+                        }
+                    }
+
+                    &.main_vs_wrap {
+
+                        .inner {
+                            padding: 0;
+                        }
+
+                        .vsSwiper {
+
+                            .swiper-slide {
+
+                                .background-img {
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+
+                    &.main_cont2 {
+
+                        .contents {
+
+                            .lef {
+                                width: calc(35% - 70px);
+                            }
+
+                            .rig {
+                                width: 65%;
+                            }
+                        }
+                    }
+
+                    &.main_cont3 {
+
+                        .contents {
+
+                            .lef {
+                                width: calc(35% - 70px);
+                            }
+
+                            .rig {
+                                width: 65%;
+                            }
+                        }
+                    }
+
+                    &.main_cont6 {
+
+                        .contents {
+
+                            .lef {
+                                width: calc(35% - 70px);
+                            }
+
+                            .rig {
+                                width: 65%;
+                            }
+                        }
+                    }
+
+                    &.contact_wrap {
+
+                        .contents {
+
+                            .lef {
+                                width: calc(35% - 70px);
+                                padding: 0;
+
+                                .textbox {
+
+                                    .main-title {
+                                        font-size: 60px;
+                                    }
+                                }
+                            }
+
+                            .rig {
+                                width: 65%;
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include w1240 {
+    .wrap {
+
+        section {
+
+            &.main-page {
+
+                article {
+
+                    .textbox {
+
+                        .main-title {
+                            margin-bottom: 15px;
+                        }
+                    }
+
+                    &.main_vs_wrap {
+
+                        .vsSwiper {
+
+                            .swiper-slide {
+
+                                .textbox {
+                                    padding: 0 calc(50 / 1920 * 100%);
+
+                                    .main_text {
+                                        font-size: 80px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.main_cont1 {
+
+                        .top_textbox {
+
+                            .korean_text {
+                                font-size: 25px;
+                                margin: 15px 0 30px;
+                            }
+
+                            .information_text {
+                                font-size: 16px;
+                            }
+                        }
+
+                        .vision_infoBox {
+
+                            > ul {
+                                justify-content: normal;
+
+                                > li {
+                                    width: calc(100%/3 - 20px);
+                                    margin-right: 30px;
+
+                                    .img {
+                                        width: 160px;
+                                        height: 160px;
+
+                                        .icon {
+                                            width: 50px;
+                                            height: 50px;
+                                            margin-bottom: 10px;
+                                        }
+
+                                        .text {
+                                            font-size: 15px;
+                                        }
+                                    }
+
+                                    .text {
+                                        font-size: 16px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.main_cont2 {
+
+                        .contents {
+
+                            .lef {
+                                width: 100%;
+                                padding: 0;
+                                margin: 0 0 50px;
+                                position: relative;
+                                top: 0;
+                                text-align: center;
+                            }
+
+                            .rig {
+                                width: 100%;
+                                padding: 0;
+
+                                .counselting_list01 {
+
+                                    > li {
+                                        width: calc(100%/2 - 15px);
+                                        margin-right: 30px;
+
+                                        .top_wrap {
+
+                                            .icon {
+                                                width: 55px;
+                                                height: 55px;
+                                            }
+
+                                            .title {
+                                                width: calc(100% - 85px);
+                                                font-size: 22px;
+
+                                                br {
+                                                    display: none;
+                                                }
+                                            }
+                                        }
+
+                                        .info_wrap {
+
+                                            .row {
+                                                margin-bottom: 20px;
+
+                                                .tag {
+                                                    font-size: 15px;
+
+                                                    i {
+                                                        width: 13px;
+                                                        height: 13px;
+                                                        margin-right: 7px;
+                                                    }
+                                                }
+
+                                                .blue_t {
+                                                    font-size: 14px;
+                                                }
+
+                                                .text {
+                                                    font-size: 14px;
+                                                }
+
+                                                .box_text {
+
+                                                    .tit {
+                                                        font-size: 15px;
+                                                    }
+
+                                                    .txt {
+                                                        font-size: 14px;
+                                                    }
+                                                }
+
+                                                .list-text {
+                                                    font-size: 15px;
+                                                    margin-bottom: 10px;
+                                                }
+
+                                                .text_list_wrap {
+
+                                                    > li {
+
+                                                        p {
+                                                            font-size: 14px;
+                                                        }
+                                                    }
+                                                }
+
+                                                .counselting-list {
+
+                                                    > li {
+
+                                                        .title {
+                                                            height: 30px;
+                                                        }
+
+                                                        .text {
+                                                            font-size: 14px;
+                                                        }
+                                                    }
+                                                }
+
+                                                .img_box {
+
+                                                    > li {
+
+                                                        .circle {
+                                                            width: 100%;
+                                                            height: 30px;
+                                                            font-size: 14px;
+                                                        }
+
+                                                        .text {
+                                                            font-size: 14px;
+                                                            width: 100%;
+                                                            margin-top: 5px;
+                                                            margin-left: 0;
+                                                        }
+                                                    }
+                                                }
+
+                                                .number-list {
+
+                                                    > li {
+                                                        font-size: 14px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.main_cont3 {
+
+                        .contents {
+
+                            .lef {
+                                width: 100%;
+                                height: auto;
+                                padding: 0;
+                                margin: 0 0 30px;
+                                position: relative;
+                                top: 0;
+                                text-align: center;
+
+                                .swiper-options {
+                                    width: 100%;
+                                    margin-top: 20px;
+                                    justify-content: flex-end;
+
+                                    .swiper-button-next,
+                                    .swiper-button-prev {
+                                        width: 50px;
+                                        height: 50px;
+                                    }
+
+                                    .swiper-button-prev,
+                                    .swiper-rtl .swiper-button-next {
+                                        margin-right: 30px;
+                                    }
+
+                                    .swiper-button-next:after,
+                                    .swiper-button-prev:after,
+                                    .swiper-rtl .swiper-button-next:after,
+                                    .swiper-rtl .swiper-button-prev:after {
+                                        width: 20px;
+                                        height: 12px;
+                                    }
+                                }
+                            }
+
+                            .rig {
+                                width: 100%;
+                                height: 510px;
+                                padding: 0;
+                                overflow: visible;
+
+                                .cont3_Swiper {
+
+                                    .swiper-slide {
+                                        padding: 20px;
+
+                                        .title {
+                                            font-size: 22px;
+                                            margin-bottom: 20px;
+                                        }
+
+                                        .row {
+                                            margin-bottom: 20px;
+
+                                            .tag {
+                                                font-size: 15px;
+
+                                                i {
+                                                    width: 13px;
+                                                    height: 13px;
+                                                    margin-right: 7px;
+                                                }
+                                            }
+
+                                            .blue_t {
+                                                font-size: 14px;
+                                            }
+
+                                            .text {
+                                                font-size: 14px;
+                                            }
+
+                                            .box_text {
+
+                                                .tit {
+                                                    font-size: 15px;
+                                                }
+
+                                                .txt {
+                                                    font-size: 14px;
+                                                }
+                                            }
+
+                                            .list-text {
+                                                font-size: 15px;
+                                                margin-bottom: 10px;
+                                            }
+
+                                            .text_list_wrap {
+
+                                                > li {
+
+                                                    p {
+                                                        font-size: 14px;
+                                                    }
+                                                }
+                                            }
+
+                                            .counselting-list {
+
+                                                > li {
+
+                                                    .title {
+                                                        height: 30px;
+                                                    }
+
+                                                    .text {
+                                                        font-size: 14px;
+                                                    }
+                                                }
+                                            }
+
+                                            .img_box {
+
+                                                > li {
+
+                                                    .circle {
+                                                        width: 100%;
+                                                        height: 30px;
+                                                        font-size: 14px;
+                                                    }
+
+                                                    .text {
+                                                        font-size: 14px;
+                                                        width: 100%;
+                                                        margin-top: 5px;
+                                                        margin-left: 0;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.main_cont4 {
+
+                        .textbox {
+                            margin-bottom: 30px;
+                        }
+
+                        .contents {
+
+                            .cont4_Swiper {
+                                height: 510px;
+                            }
+
+                            .swiper-slide {
+                                padding: 20px;
+
+                                .top_wrap {
+
+                                    .icon {
+                                        width: 55px;
+                                        height: 55px;
+                                    }
+
+                                    .title {
+                                        width: calc(100% - 85px);
+                                        font-size: 22px;
+
+                                        br {
+                                            display: none;
+                                        }
+                                    }
+                                }
+
+                                .info_wrap {
+
+                                    .row {
+                                        margin-bottom: 20px;
+
+                                        .tag {
+                                            font-size: 15px;
+
+                                            i {
+                                                width: 13px;
+                                                height: 13px;
+                                                margin-right: 7px;
+                                            }
+                                        }
+
+                                        .blue_t {
+                                            font-size: 14px;
+                                        }
+
+                                        .text {
+                                            font-size: 14px;
+                                        }
+
+                                        .box_text {
+
+                                            .tit {
+                                                font-size: 15px;
+                                            }
+
+                                            .txt {
+                                                font-size: 14px;
+                                            }
+                                        }
+
+                                        .list-text {
+                                            font-size: 15px;
+                                            margin-bottom: 10px;
+                                        }
+
+                                        .text_list_wrap {
+
+                                            > li {
+
+                                                p {
+                                                    font-size: 14px;
+                                                }
+                                            }
+                                        }
+
+                                        .counselting-list {
+
+                                            > li {
+
+                                                .title {
+                                                    height: 30px;
+                                                }
+
+                                                .text {
+                                                    font-size: 14px;
+                                                }
+                                            }
+                                        }
+
+                                        .img_box {
+
+                                            > li {
+
+                                                .circle {
+                                                    width: 100%;
+                                                    height: 30px;
+                                                    font-size: 14px;
+                                                }
+
+                                                .text {
+                                                    font-size: 14px;
+                                                    width: 100%;
+                                                    margin-top: 5px;
+                                                    margin-left: 0;
+                                                }
+                                            }
+                                        }
+
+                                        .number-list {
+
+                                            > li {
+                                                font-size: 14px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .swiper-options {
+
+                                .swiper-button-next,
+                                .swiper-button-prev {
+                                    width: 50px;
+                                    height: 50px;
+                                }
+
+                                .swiper-button-prev,
+                                .swiper-rtl .swiper-button-next {
+                                    margin-right: 30px;
+                                }
+
+                                .swiper-button-next:after,
+                                .swiper-button-prev:after,
+                                .swiper-rtl .swiper-button-next:after,
+                                .swiper-rtl .swiper-button-prev:after {
+                                    width: 20px;
+                                    height: 12px;
+                                }
+                            }
+                        }
+                    }
+
+                    &.main_cont5 {
+
+                        .contents {
+
+                            .row {
+
+                                .table-head {
+
+                                    .com_name {
+                                        padding: 5px 20px;
+                                        font-size: 22px;
+                                        margin-right: 0;
+                                    }
+
+                                    .com_info {
+                                        width: 100%;
+                                        font-size: 18px;
+                                        margin-top: 10px;
+                                    }
+                                }
+
+                                .com_table {
+
+                                    &.com_table1 {
+
+                                        thead {
+
+                                            tr {
+
+                                                th {
+
+                                                    &:nth-child(1) {
+                                                        width: 20%;
+                                                    }
+
+                                                    &:nth-child(2) {
+                                                        width: 20%;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.com_table2 {
+
+                                        thead {
+
+                                            tr {
+
+                                                th {
+
+                                                    &:nth-child(1) {
+                                                        width: 15%;
+                                                    }
+
+                                                    &:nth-child(2) {
+                                                        width: 15%;
+                                                    }
+
+                                                    &:nth-child(3) {
+                                                        width: 15%;
+                                                    }
+
+                                                    &:nth-child(4) {
+                                                        width: 30%;
+                                                    }
+
+                                                    &:nth-child(5) {
+                                                        width: 25%;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        tbody {
+
+                                            tr {
+
+                                                td {
+
+                                                    &:nth-child(4),
+                                                    &:nth-child(5) {
+                                                        padding-left: 15px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    thead {
+
+                                        tr {
+
+                                            th {
+                                                vertical-align: middle;
+                                                font-size: 16px;
+                                            }
+                                        }
+                                    }
+
+                                    tbody {
+
+                                        tr {
+
+                                            td {
+                                                font-size: 14px;
+
+                                                .profile-list {
+
+                                                    > li {
+                                                        word-break: break-all;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.main_cont6 {
+
+                        .contents {
+
+                            .lef {
+                                width: 100%;
+                                height: auto;
+                                padding: 0;
+                                margin: 0 0 30px;
+                                position: relative;
+                                top: 0;
+                                text-align: center;
+
+                                .swiper-options {
+                                    width: 100%;
+                                    margin-top: 20px;
+                                    justify-content: flex-end;
+
+                                    .swiper-button-next,
+                                    .swiper-button-prev {
+                                        width: 50px;
+                                        height: 50px;
+                                    }
+
+                                    .swiper-button-prev,
+                                    .swiper-rtl .swiper-button-next {
+                                        margin-right: 30px;
+                                    }
+
+                                    .swiper-button-next:after,
+                                    .swiper-button-prev:after,
+                                    .swiper-rtl .swiper-button-next:after,
+                                    .swiper-rtl .swiper-button-prev:after {
+                                        width: 20px;
+                                        height: 12px;
+                                    }
+                                }
+                            }
+
+                            .rig {
+                                width: 100%;
+                                height: 420px;
+                                padding-right: calc(260 / 1920 * 100%);
+
+                                .cont6_Swiper {
+
+                                    .swiper-slide {
+
+                                        .title {
+                                            font-size: 22px;
+                                        }
+
+                                        .row {
+                                            margin-bottom: 20px;
+
+                                            .tag {
+                                                font-size: 15px;
+
+                                                i {
+                                                    width: 13px;
+                                                    height: 13px;
+                                                    margin-right: 7px;
+                                                }
+                                            }
+
+                                            .blue_t {
+                                                font-size: 14px;
+                                            }
+
+                                            .text {
+                                                font-size: 14px;
+                                            }
+
+                                            .box_text {
+
+                                                .tit {
+                                                    font-size: 15px;
+                                                }
+
+                                                .txt {
+                                                    font-size: 14px;
+                                                }
+                                            }
+
+                                            .list-text {
+                                                font-size: 15px;
+                                                margin-bottom: 10px;
+                                            }
+
+                                            .text_list_wrap {
+
+                                                > li {
+
+                                                    p {
+                                                        font-size: 14px;
+                                                    }
+                                                }
+                                            }
+
+                                            .counselting-list {
+
+                                                > li {
+
+                                                    .title {
+                                                        height: 30px;
+                                                    }
+
+                                                    .text {
+                                                        font-size: 14px;
+                                                    }
+                                                }
+                                            }
+
+                                            .img_box {
+
+                                                > li {
+
+                                                    .circle {
+                                                        width: 100%;
+                                                        height: 30px;
+                                                        font-size: 14px;
+                                                    }
+
+                                                    .text {
+                                                        font-size: 14px;
+                                                        width: 100%;
+                                                        margin-top: 5px;
+                                                        margin-left: 0;
+                                                    }
+                                                }
+                                            }
+
+                                            .number-list {
+
+                                                > li {
+                                                    font-size: 14px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.contact_wrap {
+
+                        .contents {
+
+                            .lef {
+                                width: 100%;
+                                margin-right: 0;
+                                margin-bottom: 30px;
+                            }
+
+                            .rig {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.privacy-page {
+
+                article {
+
+                    &.privacy_cont {
+
+                        &.privacy_cont1 {
+
+                            .inner {
+                                max-width: 95%;
+                            }
+
+                            .privacy-wrap {
+
+                                .row {
+
+                                    .text-box {
+                                        margin-bottom: 25px;
+
+                                        .row-title {
+                                            font-size: 24px;
+                                            margin-bottom: 10px;
+                                        }
+
+                                        .row-info {
+                                            font-size: 16px;
+                                        }
+                                    }
+
+                                    .contents {
+
+                                        .box-contents {
+                                            padding: 15px;
+
+                                            > ul {
+
+                                                > li {
+                                                    width: 100%;
+                                                    margin-right: 0;
+
+                                                    &:nth-child(n-1):nth-child(-n+2) {
+                                                        margin-top: 10px;
+                                                    }
+
+                                                    &:nth-child(n-1):nth-child(-n+1) {
+                                                        margin-top: 0;
+                                                    }
+
+                                                    span {
+                                                        width: 20px;
+                                                        font-size: 14px;
+                                                    }
+
+                                                    a {
+                                                        width: calc(100% - 20px);
+                                                        font-size: 14px;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .table-wrap {
+                                            overflow: auto;
+
+                                            .privacy-table {
+                                                width: 1000px;
+                                            }
+                                        }
+
+                                        .list-box {
+                                            margin-top: 15px;
+
+                                            .circle-list {
+
+                                                .circle-list__item {
+
+                                                    .table-wrap {
+                                                        overflow: auto;
+
+                                                        .privacy-table {
+                                                            width: 1000px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .wrap {
+
+        section {
+
+            &.main-page {
+
+                article {
+                    padding: 50px 0;
+
+                    .textbox {
+
+                        .main-title {
+                            font-size: 28px;
+                        }
+
+                        .sub-text {
+                            font-size: 16px;
+
+                            br {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    &.main_vs_wrap {
+
+                        .vsSwiper {
+
+                            .swiper-slide {
+
+                                .textbox {
+                                    text-align: center;
+
+                                    .main_text {
+                                        font-size: 55px;
+                                    }
+                                }
+
+                                .circle-wrap {
+
+                                    .circle-box {
+                                        width: 405px;
+                                        height: 405px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.main_cont1 {
+
+                        .top_textbox {
+
+                            .korean_text {
+                                font-size: 20px;
+                                margin: 15px 0;
+
+                                br {
+                                    display: none;
+                                }
+                            }
+
+                            .information_text {
+
+                                br {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        .vision_infoBox {
+                            margin-top: 50px;
+
+                            > ul {
+
+                                > li {
+                                    width: calc(100%/2 - 10px);
+                                    margin-top: 40px;
+                                    margin-right: 20px;
+
+                                    &:nth-child(2) {
+                                        margin-right: 0;
+                                    }
+
+                                    &:nth-child(n+1):nth-child(-n+2) {
+                                        margin-top: 0;
+                                    }
+
+                                    .img {
+                                        width: 130px;
+                                        height: 130px;
+
+                                        .icon {
+                                            width: 40px;
+                                            height: 40px;
+                                        }
+
+                                        .text {
+                                            font-size: 13px;
+                                        }
+                                    }
+
+                                    .text {
+                                        font-size: 15px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.main_cont2 {
+
+                        .contents {
+
+                            .lef {
+                                text-align: left;
+                                margin-bottom: 30px;
+                            }
+
+                            .rig {
+
+                                .counselting_list01 {
+
+                                    > li {
+                                        width: 100%;
+                                        margin: 20px 0 0;
+                                        padding: 20px;
+
+                                        &:nth-child(n+1):nth-child(-n+2) {
+                                            margin-top: 20px;
+                                        }
+
+                                        &:nth-child(n+1):nth-child(-n+1) {
+                                            margin-top: 0;
+                                        }
+
+                                        &.w100 {
+
+                                            .info_wrap {
+
+                                                .row {
+                                                    width: calc(100%/2 - 10px);
+                                                    margin-right: 20px;
+
+                                                    &:nth-child(2) {
+                                                        margin-right: 0;
+                                                    }
+
+                                                    .blue_t {
+                                                        word-break: break-all;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.main_cont3 {
+
+                        .contents {
+
+                            .lef {
+                                text-align: left;
+                            }
+
+                            .rig {
+                                height: auto;
+                            }
+                        }
+                    }
+
+                    &.main_cont4 {
+
+                        .textbox {
+                            text-align: left;
+                        }
+
+                        .contents {
+                            padding: 0;
+                        }
+                    }
+
+                    &.main_cont5 {
+
+                        .contents {
+                            overflow: auto;
+
+                            .row {
+
+                                .table-head {
+                                    margin-bottom: 20px;
+
+                                    .com_info {
+                                        font-size: 16px;
+                                    }
+                                }
+
+                                .com_table {
+
+                                    &.com_table1 {
+
+                                        tbody {
+
+                                            tr {
+
+                                                td {
+
+                                                    &:nth-child(3) {
+                                                        padding: 5px 8px;
+                                                        background-color: #f9f9f9;
+                                                        border-radius: 5px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.com_table2 {
+
+                                        tbody {
+
+                                            tr {
+
+                                                td {
+
+                                                    &:nth-child(4),
+                                                    &:nth-child(5) {
+                                                        padding: 5px 8px;
+                                                        background-color: #f9f9f9;
+                                                        border-radius: 5px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    thead {
+                                        display: none;
+                                    }
+
+                                    tbody {
+
+                                        tr {
+                                            display: flex;
+                                            flex-direction: row;
+                                            flex-wrap: wrap;
+                                            padding: 15px 5px;
+
+                                            td {
+                                                border: 0;
+                                                padding: 0;
+
+                                                &:nth-child(1),
+                                                &:nth-child(2) {
+                                                    font-family: $f700;
+                                                    font-size: 16px;
+                                                }
+
+                                                &:nth-child(2) {
+                                                    margin-left: 5px;
+                                                }
+
+                                                &.category-name {
+                                                    width: 100%;
+                                                    margin-top: 35px;
+                                                    text-align: left;
+                                                    position: relative;
+
+                                                    &::before {
+                                                        content: '부서';
+                                                        display: block;
+                                                        position: absolute;
+                                                        top: -25px;
+                                                        left: 0;
+                                                        font-family: $f700;
+                                                        font-size: 14px;
+                                                        color: $M_color;
+                                                        line-height: 1.3;
+                                                    }
+
+                                                    br {
+                                                        display: none;
+                                                    }
+                                                }
+
+                                                &.profile-item {
+                                                    width: 100%;
+                                                    margin-top: 35px;
+                                                    padding: 5px 8px;
+                                                    background-color: #f9f9f9;
+                                                    border-radius: 5px;
+                                                    position: relative;
+
+                                                    &::before {
+                                                        content: '주요 프로필';
+                                                        display: block;
+                                                        position: absolute;
+                                                        top: -25px;
+                                                        left: 0;
+                                                        font-family: $f700;
+                                                        font-size: 14px;
+                                                        color: $M_color;
+                                                        line-height: 1.3;
+                                                    }
+
+                                                    &.profile-item2 {
+
+                                                        &::before {
+                                                            content: '전문분야';
+                                                            display: block;
+                                                            position: absolute;
+                                                            top: -25px;
+                                                            left: 0;
+                                                            font-family: $f700;
+                                                            font-size: 14px;
+                                                            color: $M_color;
+                                                            line-height: 1.3;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.main_cont6 {
+
+                        .contents {
+
+                            .lef {
+                                text-align: left;
+                            }
+
+                            .rig {
+                                padding: 5px;
+
+                                .cont6_Swiper {
+
+                                    .swiper-slide {
+                                        padding: 20px;
+                                        box-shadow: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.contact_wrap {
+
+                        .contents {
+
+                            .lef {
+
+                                .textbox {
+
+                                    .main-title {
+                                        font-size: 45px;
+                                    }
+                                }
+                            }
+
+                            .rig {
+
+                                .contact-frm-wrap {
+
+                                    .contact_frm {
+
+                                        .row {
+
+                                            .input-box {
+
+                                                > li {
+
+                                                    .text {
+                                                        font-size: 16px;
+                                                    }
+
+                                                    .input_ {
+                                                        font-size: 14px;
+                                                        height: 40px;
+
+                                                        &::placeholder {
+                                                            font-size: 14px;
+                                                        }
+                                                    }
+
+                                                    .frm_contents {
+                                                        height: 200px;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .fot-options {
+                                            justify-content: flex-end;
+
+                                            .checkbox {
+                                                width: 100%;
+                                                justify-content: flex-end;
+
+                                                .agr_btn {
+                                                    width: 13px;
+                                                    height: 13px;
+                                                }
+
+                                                .agrbtn_label {
+                                                    font-size: 14px;
+                                                }
+                                            }
+
+                                            .submit_btn {
+                                                width: 110px;
+                                                height: 35px;
+                                                font-size: 16px;
+                                                margin-top: 10px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    .wrap {
+
+        section {
+
+            &.main-page {
+
+                article {
+
+                    .textbox {
+
+                        .main-title {
+                            font-size: 22px;
+                        }
+
+                        .sub-text {
+                            font-size: 14px;
+                        }
+                    }
+
+                    &.main_vs_wrap {
+
+                        .vsSwiper {
+
+                            .swiper-slide {
+
+                                .textbox {
+                                    text-align: center;
+
+                                    .main_text {
+                                        font-size: 35px;
+                                    }
+                                }
+
+                                .circle-wrap {
+
+                                    .circle-box {
+                                        width: 305px;
+                                        height: 305px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.main_cont1 {
+
+                        .top_textbox {
+
+                            .english_text {
+                                font-size: 16px;
+                            }
+
+                            .korean_text {
+                                font-size: 18px;
+                                line-height: 1.3;
+                            }
+
+                            .information_text {
+                                font-size: 14px;
+                            }
+                        }
+
+                        .vision_infoBox {
+
+                            > ul {
+
+                                > li {
+                                    width: 100%;
+                                    margin: 20px 0 0;
+                                    padding-bottom: 20px;
+                                    border-bottom: 1px dashed #ededed;
+                                    display: flex;
+                                    flex-direction: row;
+                                    flex-wrap: wrap;
+                                    align-items: flex-start;
+
+                                    &:nth-child(n+1):nth-child(-n+2) {
+                                        margin-top: 20px;
+                                    }
+
+                                    &:nth-child(n+1):nth-child(-n+1) {
+                                        margin-top: 0;
+                                    }
+
+                                    &:last-of-type {
+                                        padding-bottom: 0;
+                                        border-bottom: 0;
+                                    }
+
+                                    .img {
+                                        width: 100px;
+                                        height: 100px;
+                                        margin-bottom: 0;
+                                        border-radius: 20px;
+
+                                        &::after {
+                                            display: none;
+                                        }
+
+                                        .icon {
+                                            width: 30px;
+                                            height: 30px;
+                                            margin-bottom: 5px;
+                                        }
+
+                                        .text {
+                                            width: 100%;
+                                            font-size: 12px;
+                                            margin: 0;
+                                        }
+                                    }
+
+                                    .text {
+                                        width: calc(100% - 120px);
+                                        margin-left: 20px;
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.main_cont2 {
+
+                        .contents {
+
+                            .rig {
+
+                                .counselting_list01 {
+
+                                    > li {
+
+                                        .top_wrap {
+
+                                            .icon {
+                                                width: 50px;
+                                                height: 50px;
+                                                margin-right: 20px;
+                                            }
+
+                                            .title {
+                                                width: calc(100% - 70px);
+                                                font-size: 18px;
+                                            }
+                                        }
+
+                                        &.w100 {
+
+                                            .info_wrap {
+
+                                                .row {
+                                                    width: 100%;
+                                                    margin-right: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.main_cont4 {
+
+                        .contents {
+
+                            .swiper-slide {
+                                box-shadow: none;
+
+                                .info_wrap {
+
+                                    .row {
+
+                                        .list-text {
+
+                                            br {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.main_cont6 {
+
+                        .contents {
+
+                            .rig {
+                                height: auto;
+                            }
+                        }
+                    }
+
+                    &.contact_wrap {
+
+                        .contents {
+
+                            .lef {
+
+                                .textbox {
+
+                                    .main-title {
+                                        font-size: 35px;
+                                    }
+                                }
+                            }
+
+                            .rig {
+
+                                .contact-frm-wrap {
+
+                                    .contact_frm {
+
+                                        .row {
+                                            margin-bottom: 20px;
+
+                                            &:nth-child(4) {
+
+                                                .input-box {
+
+                                                    > li {
+                                                        margin-bottom: 0;
+                                                    }
+                                                }
+                                            }
+
+                                            .input-box {
+
+                                                > li {
+                                                    width: 100%;
+                                                    margin-bottom: 20px;
+
+                                                    &:last-of-type {
+                                                        margin-bottom: 0;
+                                                    }
+
+                                                    .text {
+                                                        font-size: 16px;
+                                                    }
+
+                                                    .input_ {
+                                                        font-size: 14px;
+                                                        height: 40px;
+
+                                                        &::placeholder {
+                                                            font-size: 14px;
+                                                        }
+                                                    }
+
+                                                    .frm_contents {
+                                                        height: 200px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.privacy-page {
+                padding: 40px 0;
+
+                article {
+
+                    &.privacy_cont {
+
+                        &.privacy_cont1 {
+
+                            .top_title_wrap {
+
+                                .title {
+                                    font-size: 28px;
+                                }
+                            }
+
+                            .privacy-wrap {
+
+                                .row {
+
+                                    .text-box {
+
+                                        .row-title {
+                                            font-size: 20px;
+                                        }
+
+                                        .row-info {
+                                            font-size: 14px;
+                                        }
+                                    }
+
+                                    .contents {
+
+                                        .box-contents {
+
+                                            > ul {
+
+                                                > li {
+                                                    align-items: flex-start;
+                                                }
+                                            }
+                                        }
+
+                                        .list-box {
+
+                                            .circle-list {
+
+                                                .circle-list__item {
+                                                    padding-left: 20px;
+
+                                                    &::before {
+                                                        top: 2px;
+                                                        width: 12px;
+                                                        height: 12px;
+                                                        line-height: 12px;
+                                                        font-size: 10px;
+                                                    }
+
+                                                    .textbox {
+                                                        margin-bottom: 10px;
+
+                                                        .title {
+                                                            font-size: 14px;
+                                                        }
+
+                                                        .text {
+                                                            font-size: 14px;
+                                                        }
+                                                    }
+
+                                                    .num-list {
+
+                                                        > li {
+                                                            font-size: 14px;
+                                                        }
+                                                    }
+
+                                                    .table-wrap {
+
+                                                        .privacy-table {
+                                                            width: 768px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .table-wrap {
+
+                                            .privacy-table {
+                                                width: 768px;
+
+                                                tbody {
+
+                                                    tr {
+
+                                                        td {
+                                                            font-size: 14px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .btn-wrap {
+
+                                    .homepage_btn {
+                                        width: 110px;
+                                        height: 35px;
+                                        font-family: $f500;
+                                        font-size: 16px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,283 @@
+@import "./_variables";
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 30%);
+    z-index: 100;
+    transition: all 0.3s ease-in-out;
+
+    &.white {
+        background-color: #fff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+        .logo {
+
+            > a {
+                color: #222;
+            }
+        }
+
+        .nav {
+
+            .gnb {
+
+                > li {
+
+                    > a {
+                        color: #222;
+                    }
+                }
+            }
+        }
+
+        .menu_wrap {
+
+            .menu-btn {
+
+                span {
+                    background-color: #000;
+                }
+            }
+        }
+    }
+
+    .inner {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 calc(260 / 1920 * 100%);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+
+        > a {
+            font-family: $f700;
+            font-size: 24px;
+            line-height: 1.3;
+            color: #222;
+        }
+    }
+
+    .nav {
+
+        .gnb {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            > li {
+                margin-right: 50px;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                &.active {
+
+                    > a {
+                        font-family: $f700;
+                        color: $M_color;
+                    }
+                }
+
+                > a {
+                    font-family: $f500;
+                    font-size: 18px;
+                    line-height: 1.3;
+                    color: #222;
+                    display: block;
+                }
+
+                &.contact_nav {
+
+                    > a {
+                        padding: 5px 20px;
+                        background-color: #214676;
+                        color: #fff;
+                        border-radius: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    .menu_wrap {
+        display: none;
+
+        .menu-btn {
+            display: block;
+            width: 30px;
+            padding: 0;
+            margin: 0;
+            border: 0;
+            background-color: transparent;
+            cursor: pointer;
+
+            span {
+                width: 100%;
+                height: 1px;
+                display: block;
+                background-color: #000;
+                margin-bottom: 7px;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .o_gnb {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            max-width: 640px;
+            width: 100%;
+            height: 100%;
+            background-color: $M_color;
+            box-shadow: 8px 0 12px rgba(0, 0, 0, 10%) inset;
+            transition: 0.6s;
+
+            &.on {
+                right: 0;
+
+                span {
+                    background-color: transparent;
+
+                    &::before {
+                        width: 27px;
+                        top: 0;
+                        transform: rotate(45deg);
+                    }
+
+                    &::after {
+                        top: 0;
+                        transform: rotate(-45deg);
+                    }
+                }
+
+                .gnb {
+                    width: 100%;
+                    height: 100%;
+                    padding: 100px 50px;
+
+                    > li {
+                        width: 100%;
+                        margin-bottom: 20px;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        > a {
+                            font-family: $f500;
+                            font-size: 24px;
+                            line-height: 1.3;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .gnb {
+                width: 100%;
+                height: 100%;
+                padding: 100px 50px;
+
+                > li {
+                    width: 100%;
+                    margin-bottom: 20px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    > a {
+                        font-family: $f500;
+                        font-size: 24px;
+                        line-height: 1.3;
+                        color: #fff;
+                    }
+                }
+            }
+
+            .close-wrap {
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                width: 30px;
+                height: 30px;
+                background-color: #fff;
+                padding: 0;
+                margin: 0;
+                border: 0;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@include desktop {
+    .header {
+
+        .inner {
+            padding: 0 calc(100 / 1920 * 100%);
+        }
+
+        .logo {
+
+            > a {
+                color: #fff;
+            }
+        }
+    }
+}
+
+@include w1240 {
+    .header {
+
+        .inner {
+            padding: 0 calc(50 / 1920 * 100%);
+        }
+
+        .nav {
+            display: none;
+        }
+
+        .menu_wrap {
+            display: block;
+
+            .menu-btn {
+
+                span {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
+
+@include tablet {}
+
+@include mobile {
+    .header {
+        height: 75px;
+
+        .menu_wrap {
+
+            .o_gnb {
+
+                &.on {
+                    width: 95%;
+                }
+            }
+        }
+    }
+}
